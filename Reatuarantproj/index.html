@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .hamburger {
+            display: none;
+            float: right;
+            padding: 14px 16px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 600px) {
+            nav a {
+                display: none;
+            }
+            nav a.icon {
+                float: right;
+                display: block;
+            }
+            nav.responsive {
+                position: relative;
+            }
+            nav.responsive a {
+                display: block;
+                float: none;
+                text-align: left;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .banner-img{
+            position:absolute;    
+        }
+        .img-content{
+            position: relative;
+            color:white;
+            transform: translate(48%,40%);
+
+        }
+        .main-heading{
+            font-size:3vw;
+            color:#ff6f61;
+        }
+        .main-para{
+            font-size: 2vw;
+        }
+        .main-page{
+            margin-top: 80vh;
+        }
+        .card-img{
+            width:20vw;
+        }
+        .fs-16px{
+            font-size: 16px;
+            line-height: inherit;
+        }
+        .menu-section {
+    margin-bottom: 30px;
+}
+
+.menu-section h2 {
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 10px;
+}
+
+.menu-item {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.item-details {
+    padding: 15px;
+}
+
+.item-details h3 {
+    margin: 0;
+    color: #333;
+}
+
+.item-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.item-details span {
+    font-weight: bold;
+    color: #ff6f61;
+}
+.book-a-table {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-a-table h2 {
+    text-align: center;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #ff6f61;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e65c50;
+}
+
+.About-section{
+    background-image:url("./images/aboutus.jpg");
+    background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+.about-section-content{
+    padding:7vw;
+}
+.heading-clr{
+    color:#ff6f61;
+}
+.translate-fade-in-section {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: translateFadeIn 1.5s ease forwards; 
+}
+
+
+@keyframes translateFadeIn {
+    from {
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <img src="./images/logo.jpg" height="50">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#About">About</a>
+        <a href="#book">Book A Table</a>
+        <a href="#items">Items</a>
+        <a href="#contact">Contact</a>
+        <a href="javascript:void(0);" class="hamburger" onclick="toggleNavbar()">&#9776;</a>
+    </nav>
+    <section class="banner-section" id="home">
+        
+            <img src="./images/banner-image.jpg" class="img-fluid banner-img"> 
+            <div class="img-content">
+                <h1 class="main-heading translate-fade-in-section">Elevate Your Experience</h1>
+                <p class="main-para translate-fade-in-section">Quality Products for Every Need</p>
+            </div>
+    </section>
+<section class="main-page">
+    
+        <div class="menu-section" id="menu">
+            <h2>Starters</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Bruschetta</h3>
+                    <p>Toasted baguette topped with fresh tomatoes, basil, and balsamic glaze.</p>
+                    <span>$8</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Stuffed Mushrooms</h3>
+                    <p>Savory mushrooms filled with cream cheese, herbs, and spices.</p>
+                    <span>$10</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Mini Meatballs</h3>
+                    <p>Juicy meatballs served with marinara sauce and parmesan.</p>
+                    <span>$9</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Grilled Chicken Alfredo</h3>
+                    <p>Tender chicken breast over fettuccine pasta with creamy Alfredo sauce.</p>
+                    <span>$16</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Vegetable Stir-Fry</h3>
+                    <p>A colorful mix of seasonal vegetables sautéed in a savory sauce, served with rice.</p>
+                    <span>$14</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Beef Lasagna</h3>
+                    <p>Layers of pasta, rich meat sauce, and melted cheese, baked to perfection.</p>
+                    <span>$18</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Classic Tiramisu</h3>
+                    <p>Espresso-soaked ladyfingers layered with mascarpone cream.</p>
+                    <span>$7</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Warm chocolate cake with a gooey molten center, served with vanilla ice cream.</p>
+                    <span>$8</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Seasonal Fruit Tart</h3>
+                    <p>A buttery crust filled with pastry cream and topped with fresh fruit.</p>
+                    <span>$6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Beverages</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Freshly Squeezed Lemonade</h3>
+                    <p>A refreshing blend of lemons and sweetness.</p>
+                    <span>$4</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Artisan Iced Tea</h3>
+                    <p>Choose from sweetened or unsweetened, with a hint of mint.</p>
+                    <span>$3</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>House Coffee</h3>
+                    <p>Freshly brewed coffee, served hot or iced.</p>
+                    <span>$2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="About-section" id="About">
+        <div class="about-section-content translate-fade-in-section">
+            <div style="background-color: rgba(0, 0, 0, 0.6);color:white;padding:15px;">
+       <h1 class="heading-clr">About Us</h1> 
+        <p>At The Family Kitchen, we believe that food is more than just sustenance; it's a way to bring people together. Founded with a passion for home-cooked meals, our restaurant is dedicated to creating a warm and welcoming atmosphere where families can gather and create cherished memories.</p>
+        
+       <p> Our journey began with a simple mission: to provide delicious, wholesome meals made from quality ingredients that evoke the comforts of home. Each dish on our menu is crafted with love, drawing inspiration from time-honored recipes passed down through generations. We take pride in sourcing fresh, local ingredients to ensure every bite is a true representation of our commitment to quality and taste.</p>
+        
+       <p> We understand the importance of family traditions, and we strive to create an experience that feels like a family gathering—complete with laughter, storytelling, and, of course, incredible food. Whether you're enjoying a casual lunch, celebrating a special occasion, or simply catching up with loved ones, The Family Kitchen is your go-to destination for heartfelt meals that nourish both body and soul.</p>
+        
+        <p>Join us for a culinary journey that celebrates the joy of sharing meals together. Discover why The Family Kitchen is more than just a restaurant; it's a place where families come together to enjoy great food and make lasting memories.</p>
+    </div>
+</div>
+    </section>
+
+    <section class="book-a-table" id="book">
+        <h2>Book a Table</h2>
+        <form action="submit_form.php" method="post" id="reservation-form">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="items">Choose an Item:</label>
+                <select id="items" name="items" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="starters">Starters</option>
+                    <option value="desserts">Desserts</option>
+                    <option value="main-course">Main Course</option>
+                    <option value="beverages">Beverages</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" cols="30" placeholder="Any special requests?"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+    
+
+    <section class="Items" id="items">
+        <div class="row translate-fade-in-section">
+            <div class="col-md-6" >
+                <div class="card-items">
+                    <div class="list">
+                        <h1>Starters</h1>
+                        <ul>
+                            <li>Chicken Tikka</li>
+                            <li>Broasted Chickien</li>
+                            <li>Shah Paneer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-items">
+                    <div class="list">
+                        <h1>Main Course</h1>
+                        <ul>
+                            <li>Chicken Biryani</li>
+                            <li>Mutton Biryani</li>
+                            <li>Paneer Mandi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-items">
+                    <div class="list">
+                        <h1>Deserts</h1>
+                        <ul>
+                            <li>Double ka Meeta</li>
+                            <li>IceCream</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-items">
+                    <div class="list">
+                        <h1>Beverages</h1>
+                        <ul>
+                            <li>Mocktails</li>
+                            <li>Red Wines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="contact-us" id="contact">
+
+</section>
+
+<footer class="row">
+    <div class="col-md-4">
+        <img src="./images/logo.jpg" height="100">
+        <p>At The Family Kitchen, we are dedicated to bringing families together through the love of good food. Our menu features a delightful array of home-cooked dishes made from the freshest ingredients, crafted with care and passion</p>
+    </div>
+    <div class="col-md-4">
+        <p>Home</p>
+        <p>Menu</p>
+        <p>About</p>
+        <p>Reservation</p>
+        <p>Contact</p> 
+           
+    </div>
+    <div class="col-md-4">
+        <h1>Timings</h1>
+        <p>We are Open From 3:00pm to 6:00pm</p>
+
+
+
+    </div>
+</footer>
+
+
+    <script>
+        function toggleNavbar() {
+            var navbar = document.getElementById("navbar");
+            if (navbar.className === "") {
+                navbar.className = "responsive";
+            } else {
+                navbar.className = "";
+            }
+        }
+        document.getElementById('reservation-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for your reservation! We will contact you shortly.');
+    this.reset();
+});
+
+        </script>
+</body>
+</html>
